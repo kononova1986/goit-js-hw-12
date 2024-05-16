@@ -10,6 +10,7 @@ const list = document.querySelector('.list');
       captionsData: 'alt',
     });
 
+
 export function render(photos) {
     const markup = photos.hits.map((photo) => {
       return `<li class="gallery-item" >
@@ -31,9 +32,35 @@ export function render(photos) {
   list.insertAdjacentHTML("beforeend", markup);
   lightbox.refresh();
 }
+
   export const displayErrorMessage = () => {
     iziToast.error({
         message: 'Sorry, there are no images matching your search query. Please try again!',
+        icon: '',
+        backgroundColor: '#EF4040',
+        position: 'topRight',
+        progressBarColor: '#B51B1B',
+        messageColor: 'white',
+        close: false,
+        timeout: 2000,
+    });
+};
+  export const displayEndResultsMessage = () => {
+    iziToast.error({
+        message: "We're sorry, but you've reached the end of search results.",
+        icon: '',
+        backgroundColor: '#EF4040',
+        position: 'topRight',
+        progressBarColor: '#B51B1B',
+        messageColor: 'white',
+        close: false,
+        timeout: 2000,
+    });
+};
+
+export const displayMessageInput = () => {
+    iziToast.error({
+        message: "Fill in the search field.Please try again!",
         icon: '',
         backgroundColor: '#EF4040',
         position: 'topRight',
